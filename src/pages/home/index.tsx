@@ -23,7 +23,7 @@ interface ForecastProps {
 }
 
 
-
+const apiKey = '6008e3d5614fedf5756e0172f7b8886e';
 
 export function Home() {
   const [input, setInput] = useState('São Paulo');
