@@ -5,8 +5,8 @@
   }
   
   body{
-    background: rgb(135,179,236);
-    background: linear-gradient(90deg, rgba(135,179,236,1) 0%, rgba(95,155,233,1) 50%, rgba(135,179,236,1) 100%);
+    background: rgb(80, 148, 236);
+    background: linear-gradient(rgb(76, 137, 216)  rgb(28, 115, 230) , rgb(76, 137, 216) );
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
