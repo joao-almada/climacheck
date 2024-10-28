@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './home.module.css';
+import { toast } from 'react-toastify'
 
 interface TempProps {
   name?: string;
@@ -23,7 +24,7 @@ interface ForecastProps {
 }
 
 
-
+const apiKey = '6008e3d5614fedf5756e0172f7b8886e';
 
 export function Home() {
   const [input, setInput] = useState('São Paulo');
@@ -38,6 +39,12 @@ export function Home() {
   }, []);
 
   async function getWeather() {
+
+    if(input === ''){
+      toast.warn("Digite uma cidade!")
+      return;
+    }
+
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&lang=pt_br&units=metric&appid=${apiKey}`)
       .then((response) => response.json())
       .then((data) => {
@@ -77,6 +84,7 @@ export function Home() {
       .catch((error) => {
         console.error('Erro ao buscar previsão:', error);
       });
+      setInput('')
   }
 
   if (loading) {
